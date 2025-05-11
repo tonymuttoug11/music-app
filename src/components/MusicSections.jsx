@@ -1,7 +1,7 @@
 export default function MusicSections() {
   return (
-    <div className="space-y-8 pb-8"> {/* Added pb-8 for footer spacing */}
-      {/* Trending Songs Section */}
+    <div className="space-y-8">
+      {/* Trending Songs */}
       <section className="bg-gray-800/50 rounded-xl p-6">
         <h2 className="text-2xl font-bold mb-6 text-purple-400">Trending Songs</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -19,7 +19,7 @@ export default function MusicSections() {
         </div>
       </section>
 
-      {/* Top 100 Section */}
+      {/* Top 100 */}
       <section className="bg-gray-800/50 rounded-xl p-6">
         <h2 className="text-2xl font-bold mb-6 text-purple-400">Top 100</h2>
         <div className="space-y-3">
@@ -41,7 +41,7 @@ export default function MusicSections() {
         </div>
       </section>
 
-      {/* Trending Artists Section */}
+      {/* Trending Artists */}
       <section className="bg-gray-800/50 rounded-xl p-6">
         <h2 className="text-2xl font-bold mb-6 text-purple-400">Trending Artists</h2>
         <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-4">

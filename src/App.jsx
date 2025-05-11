@@ -6,18 +6,22 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-900 text-white">
-      {/* Fixed Navbar */}
-      <Navbar />
+      {/* Combined Navbar + Left Menu Header */}
+      <div className="fixed top-0 left-0 right-0 z-50 flex h-16 bg-gray-800">
+        {/* Left Menu Logo */}
+        <div className="w-16 md:w-56 border-r border-gray-700 flex-shrink-0 flex items-center px-4">
+          <FaMusic className="text-2xl text-purple-500" />
+          <span className="hidden md:inline ml-2 text-xl font-bold">MusicApp</span>
+        </div>
+        
+        {/* Navbar */}
+        <Navbar />
+      </div>
 
-      {/* Main content area */}
-      <div className="flex flex-1 pt-16"> {/* pt-16 to account for navbar */}
-        {/* Fixed Left Menu */}
+      {/* Main Content Area */}
+      <div className="flex flex-1 pt-16"> {/* pt-16 for fixed header */}
+        {/* Left Menu Navigation */}
         <div className="w-16 md:w-56 bg-gray-800 border-r border-gray-700 flex-shrink-0 h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto">
-          <div className="p-4 flex justify-center md:justify-start items-center h-16 border-b border-gray-700">
-            <FaMusic className="text-2xl text-purple-500" />
-            <span className="hidden md:inline ml-2 text-xl font-bold">MusicApp</span>
-          </div>
-          
           <nav className="space-y-2 px-2 py-4">
             <SidebarLink icon={<FaHome />} text="Home" active />
             <SidebarLink icon={<FaCompass />} text="Discover" />
@@ -29,13 +33,13 @@ export default function App() {
 
         {/* Scrollable Music Content */}
         <div className="flex-1 overflow-y-auto">
-          <div className="p-4 md:p-6 min-h-[calc(100vh-8rem)]"> {/* Adjusted height */}
+          <div className="p-4 md:p-6 pb-32 min-h-[calc(100vh-8rem)]">
             <MusicSections />
           </div>
-          <Footer /> {/* Footer placed after content */}
+          <Footer />
         </div>
 
-        {/* Fixed Right Ad Space */}
+        {/* Right Ad Space */}
         <div className="hidden lg:block w-64 bg-gray-800 border-l border-gray-700 flex-shrink-0 h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto">
           <div className="p-4 space-y-4">
             <AdSection />
