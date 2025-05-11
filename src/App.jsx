@@ -5,16 +5,14 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="flex flex-col h-screen bg-gray-900 text-white overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-gray-900 text-white">
       {/* Fixed Navbar */}
-      <div className="fixed top-0 left-0 right-0 z-50">
-        <Navbar />
-      </div>
+      <Navbar />
 
       {/* Main content area */}
-      <div className="flex flex-1 pt-16"> {/* pt-16 to account for navbar height */}
+      <div className="flex flex-1 pt-16"> {/* pt-16 to account for navbar */}
         {/* Fixed Left Menu */}
-        <div className="w-16 md:w-56 bg-gray-800 border-r border-gray-700 fixed left-0 top-16 bottom-0 overflow-y-auto">
+        <div className="w-16 md:w-56 bg-gray-800 border-r border-gray-700 flex-shrink-0 h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto">
           <div className="p-4 flex justify-center md:justify-start items-center h-16 border-b border-gray-700">
             <FaMusic className="text-2xl text-purple-500" />
             <span className="hidden md:inline ml-2 text-xl font-bold">MusicApp</span>
@@ -29,27 +27,20 @@ export default function App() {
           </nav>
         </div>
 
-        {/* Scrollable Middle Content */}
-        <div className="flex-1 ml-16 md:ml-56 mr-0 lg:mr-64 overflow-y-auto" style={{
-          height: 'calc(100vh - 4rem)',
-          paddingBottom: '4rem' /* space for footer */
-        }}>
-          <div className="p-4 md:p-6">
+        {/* Scrollable Music Content */}
+        <div className="flex-1 overflow-y-auto">
+          <div className="p-4 md:p-6 min-h-[calc(100vh-8rem)]"> {/* Adjusted height */}
             <MusicSections />
           </div>
+          <Footer /> {/* Footer placed after content */}
         </div>
 
         {/* Fixed Right Ad Space */}
-        <div className="hidden lg:block w-64 bg-gray-800 border-l border-gray-700 fixed right-0 top-16 bottom-0 overflow-y-auto">
+        <div className="hidden lg:block w-64 bg-gray-800 border-l border-gray-700 flex-shrink-0 h-[calc(100vh-4rem)] sticky top-16 overflow-y-auto">
           <div className="p-4 space-y-4">
             <AdSection />
           </div>
         </div>
-      </div>
-
-      {/* Fixed Footer */}
-      <div className="fixed bottom-0 left-0 right-0 z-50">
-        <Footer />
       </div>
     </div>
   );

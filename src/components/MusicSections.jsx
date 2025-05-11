@@ -1,6 +1,6 @@
 export default function MusicSections() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 pb-8"> {/* Added pb-8 for footer spacing */}
       {/* Trending Songs Section */}
       <section className="bg-gray-800/50 rounded-xl p-6">
         <h2 className="text-2xl font-bold mb-6 text-purple-400">Trending Songs</h2>
